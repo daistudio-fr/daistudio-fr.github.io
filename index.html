@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section class="loop active">
+        <div class="list" data-nav="" data-img="/img/1.jpg">
+            <span class="number">
+                <span>02</span>
+            </span>
+            <span class="artist">
+                <span>DI-MEH, SLIMKA, MAKALA</span>
+            </span>
+            <span class="titre">
+                <span>SUPERWAK XTRM TOUR 2017</span>
+            </span>
+            <span class="location">
+                <span>LYON FRANCE</span>
+            </span>
+            <span class="date">
+                <span>2020</span>
+            </span>
+            <img src="/img/1.jpg">
+        </div>
+    </section>
+    <div id="container"></div>
+    <script src="app.js"></script>
+    <script>
+        javascript: (function() {
+            var script = document.createElement('script');
+            script.onload = function() {
+                var stats = new Stats();
+                document.body.appendChild(stats.dom);
+                requestAnimationFrame(function loop() {
+                    stats.update();
+                    requestAnimationFrame(loop)
+                });
+            };
+            script.src = '//mrdoob.github.io/stats.js/build/stats.min.js';
+            document.head.appendChild(script);
+        })()
+    </script>
+</body>
+
+</html>
